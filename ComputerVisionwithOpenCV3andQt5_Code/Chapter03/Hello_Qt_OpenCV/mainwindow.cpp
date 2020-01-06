@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -97,6 +97,7 @@ void MainWindow::changeEvent(QEvent *event)
 
 void MainWindow::on_actionTurkish_triggered()
 {
+    // qApp app的全局指针
     qApp->installTranslator(turkishTranslator);
 }
 

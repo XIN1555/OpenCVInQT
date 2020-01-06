@@ -33,20 +33,31 @@ HEADERS += \
 FORMS += \
         mainwindow.ui
 
-win32: {
-    include(c:/dev/opencv/opencv.pri)
-}
+#win32: {
+#    include(c:/dev/opencv/opencv.pri)
+#}
 
-unix: !macx{
-    CONFIG += link_pkgconfig
-    PKGCONFIG += opencv
-}
+#unix: !macx{
+#    CONFIG += link_pkgconfig
+#    PKGCONFIG += opencv
+#}
 
-unix: macx{
-INCLUDEPATH += /usr/local/include
-LIBS += -L/usr/local/lib \
-    -lopencv_world
-}
+#unix: macx{
+#INCLUDEPATH += /usr/local/include
+#LIBS += -L/usr/local/lib \
+#    -lopencv_world
+#}
+
+################################# opencv配置 ###########################################
+INCLUDEPATH += \
+        D:\opencv\build\include
+        D:\opencv\build\include\opencv
+        D:\opencv\build\include\opencv2
+
+LIBS += \
+        -lD:\opencv\build\x64\vc15\lib\opencv_world340d
+
+#######################################################################################
 
 RESOURCES += \
     resources.qrc
